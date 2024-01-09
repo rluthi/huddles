@@ -2,9 +2,9 @@ install:
 	poetry install
 
 black:
-	black huddler tests
+	black huddles tests
 
 ruff:
-	ruff huddler tests
+	ruff huddles tests
 
 style: black ruff
