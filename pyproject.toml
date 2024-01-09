@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "huddler"
+name = "huddles"
 version = "0.1.0"
 description = "Navigate 2D representations of your data"
 authors = ["rluthi <18192364+rluthi@users.noreply.github.com>"]
