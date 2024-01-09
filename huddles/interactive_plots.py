@@ -4,14 +4,14 @@ import numpy as np
 import pandas as pd
 
 
-def explore_2d_embeddings(
+def create_2d_embeddings_exploration_plot(
     embeddings: Union[np.ndarray, pd.DataFrame],
     dataset: pd.DataFrame,
     hue: Union[str, None] = None,
     disable_row_limit: bool = True,
 ) -> altair.vegalite.v4.api.VConcatChart:
     """
-    Visualize a 2D representation of your data you can interact with to highlight subsets.
+    Visualize a 2D representation of your data you can interact with.
 
     The function creates an interactive scatter plot of 2D embeddings using Altair. It allows for optional color coding
     based on a feature specified by 'hue'. A data table corresponding to the points currently selected is also
