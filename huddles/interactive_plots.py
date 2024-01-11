@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 
 
-def create_2d_embeddings_exploration_plot(
+def create_exploration_plot(
     embeddings: Union[np.ndarray, pd.DataFrame],
     dataset: pd.DataFrame,
     hue: Union[str, None] = None,
