@@ -4,12 +4,12 @@ import numpy as np
 import pandas as pd
 
 
-def create_exploration_plot(
+def embedding_exploration_plot(
     embeddings: Union[np.ndarray, pd.DataFrame],
     dataset: pd.DataFrame,
     hue: Union[str, None] = None,
     disable_row_limit: bool = True,
-) -> altair.vegalite.v4.api.VConcatChart:
+) -> altair.vegalite.v5.api.HConcatChart:
     """
     Visualize a 2D representation of your data you can interact with.
 

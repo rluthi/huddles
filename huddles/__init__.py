@@ -1,1 +1,1 @@
-from .interactive_plots import create_exploration_plot  # noqa: F401
+from .interactive_plots import embedding_exploration_plot  # noqa: F401
