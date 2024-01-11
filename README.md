@@ -30,7 +30,7 @@ The library has been tested with Python 3.11.
 ## Usage
 
 This is an example of how to use the *huddles* library to explore the Iris dataset.
-**TODO: check if it runs**
+
 ```python  #
 from sklearn import datasets
 from sklearn.manifold import TSNE
@@ -39,18 +39,18 @@ import huddles
 
 # Load the Iris dataset
 iris = datasets.load_iris()
-input_data = iris.data
-targets = iris.target
+input_data = pd.DataFrame(iris.data, columns=iris.feature_names)
+targets = pd.Series([iris.target_names[x] for x in iris.target]).rename("species")
 
 # Dimensionality Reduction with t-SNE
 tsne = TSNE(n_components=2)
 
 # Preparing the DataFrame
-df_embeddings = pd.DataFrame(tsne.fit_transform(input_data), columns=['x1', 'x2'])
-df_combined = pd.concat([df_embeddings, df_data], axis=1)
+embeddings = tsne.fit_transform(input_data)
+full_dataset = pd.concat([input_data, targets], axis=1)
 
 # Explore the embedding with huddles
-huddles.embedding_exploration_plot(df_embeddings, df_combined, hue='species')
+huddles.embedding_exploration_plot(embeddings, full_dataset, hue='species')')
 ```
 
 **TODO: ADD GIF**
