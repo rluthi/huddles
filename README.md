@@ -1,3 +1,7 @@
+<div style="text-align:center;">
+<img src="docs/penguin_in_huddles_dall_e.png" alt="penguin in huddle" width="450px"/>
+</div>
+
 # huddles
 
 <p align="center">
@@ -67,4 +71,3 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ## Acknowledgements
 
 Inspired by [cluestar](https://github.com/koaning/cluestar)
-
