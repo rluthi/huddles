@@ -10,21 +10,30 @@ from huddles import embedding_exploration_plot
 @pytest.fixture
 def random_embeddings_and_data():
     embeddings = np.random.rand(10, 2)
-    dataset = pd.DataFrame({"a": np.random.rand(10), "b": np.random.rand(10)})
+    dataset = pd.DataFrame({"num": np.random.rand(10), "str_cats": ["a", "b", "c", "a", "a", "b", "c", "b", "a", "d"]})
     return embeddings, dataset
 
 
-# TODO: test with numerical hue
-# TODO: test with categorical hue
-# TODO: test with Null as hue
-
-
-def test_valid_input(random_embeddings_and_data):
+# Testing a walkthrough with valid data (visual tests must always also be done manually)
+def test_valid_input_with_defaults(random_embeddings_and_data):
     embeddings, dataset = random_embeddings_and_data
     result = embedding_exploration_plot(embeddings, dataset)
     assert isinstance(result, type(altair.HConcatChart()))
 
 
+def test_valid_input_with_numerical_hue(random_embeddings_and_data):
+    embeddings, dataset = random_embeddings_and_data
+    result = embedding_exploration_plot(embeddings, dataset, hue="num")
+    assert isinstance(result, type(altair.HConcatChart()))
+
+
+def test_valid_input_with_categorical_hue(random_embeddings_and_data):
+    embeddings, dataset = random_embeddings_and_data
+    result = embedding_exploration_plot(embeddings, dataset, hue="str_cats")
+    assert isinstance(result, type(altair.HConcatChart()))
+
+
+# Testing the errors cases (Are they correctly raised?)
 def test_embeddings_invalid_column_count(random_embeddings_and_data):
     embeddings, dataset = random_embeddings_and_data
     embeddings = np.random.rand(10, 3)  # 3 columns instead of 2

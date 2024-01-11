@@ -24,7 +24,7 @@ def embedding_exploration_plot(
         disable_row_limit: Optional; if True, disables Altair's maximum row limit.
 
     Returns:
-        An Altair vertical concatenation chart (scatter plot and data table).
+        An Altair interactive visualization
     """
 
     # Sanity checks
